@@ -1,0 +1,41 @@
+{% extends 'items/index.html' %}
+{% load static %}
+
+{% comment %} {% block navbar %}
+{% include "partials/navbar.html" %}
+{% endblock navbar%} {% endcomment %}
+
+
+{% block content %}
+
+
+<div style="height: 50rem;margin-top: 19rem;" class="container">
+<h1 style="position: relative;top: -100px;"><Strong>Products</Strong></h1>
+{% for product in products %}
+
+    <div class="row" style="display: inline-block;">
+    <div style="-webkit-box-flex: 0;-ms-flex: 0 0 auto;flex: 0 0 auto;width: 64.33333%;position: relative;
+    top: -75px;">
+        <img style="width: 100%;height: 200px;-webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);-moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);" src="{{ product.image.url }}">
+        <div style="-webkit-box-flex: 0;-ms-flex: 0 0 auto;flex: 0 0 auto;width: 33.33333%;border-radius: 0 0 4px 4px;" class="box-element product">
+            <div style="width: 20px;">
+                <h6 style="font-size: 21px;"><strong>{{product}}</strong></h6>
+            </div>
+            
+            <div style="width: 143px;">
+                <hr>
+            </div>
+            
+            <a style="display: inline-block;" href="#">
+                <button data-product='{{product.id}}' data-action='add' style="width: 9rem;" class="btn btn-outline-secondary update-cart">Add to Cart</button><br>
+            </a>
+            
+            <a style="width: 9rem;" class="btn btn-outline-success" href="#">View</a>
+            <h4 style="position: relative;left: 174px;bottom: 75px;">${{product.price}}</h4>
+
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+{% endblock content %}

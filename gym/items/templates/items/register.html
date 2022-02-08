@@ -1,0 +1,28 @@
+{% extends 'items/index.html' %}
+
+{% block content %}
+    
+    <div class="container" style="height: 45rem; padding-top: 15rem;">
+        <div class="content" >
+            <h1 style="padding-bottom: 1rem;text-align: center;">Register Page</h1>
+        <div class="container" style="margin: 0px auto; text-align: center; width: 60%;">
+            <p style='font-size: 2rem;'>Username</p>
+            {{form.username}}
+            <p style='font-size: 2rem;'>Password</p>
+            {{form.password1}}
+            <p style='font-size: 2rem;'>Confirm Password</p>
+            {{form.password2}}
+            <br>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <button style="margin-top:1rem;" class="btn btn-primary rounded-start-0" type="submit">Register</button> 
+            </form>
+               
+        </div>
+        
+        </div>
+        
+        
+    </div>
+    
+{% endblock content %}   

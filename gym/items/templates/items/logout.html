@@ -1,0 +1,20 @@
+{% extends 'items/index.html' %}
+
+
+{% block content %}
+    <div class="container" style='height: 50rem;align-items: center;'>
+        <h1 style="padding-top:16rem;padding-left:8rem;font-size: 3.5rem;"><strong>Logout</strong></h1>
+        <p style="padding-left: 8rem; display: flex;font-size: 3rem;">Are You Sure You Want To Logout?</p>
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                <button style="margin-left: 8rem;" class="btn btn-primary rounded-start-0" type="submit">Logout</button>
+            </form>
+                <a href="{% url 'items:home' %}">
+                    <button style="margin-left: 8rem;margin-top: 1rem;" class="btn btn-primary rounded-start-0" type="submit">Go Back</button>
+                </a>
+        </div>
+        
+        
+    </div>
+{% endblock content %}   
